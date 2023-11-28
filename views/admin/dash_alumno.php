@@ -41,12 +41,15 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                    foreach ($data as $data) {
+                    ?>
                     <tr>
-                        <td> 1</td>
-                        <td> jose luis martinez</td>
-                        <td> estudiante@estudiante </td>
-                        <td>24/3/ este 13 oriente 199</td>
-                        <td> 24/03/2003</td>
+                        <td><?php echo $data['id']; ?> </td>
+                        <td> <?php echo $data['nombre']; ?></td>
+                        <td> <?php echo $data['correo']; ?></td>
+                        <td><?php echo $data['direccion']; ?></td>
+                        <td> <?php echo $data['fecha_nac']; ?></td>
                         <td>
                             <a href="/admin/alumno/edit"> Editar</a>
                             <form action="">
@@ -54,7 +57,7 @@
                             </form>
                         </td>
                     </tr>
-
+                    <?php  } ?>
 
                 </tbody>
             </table>
@@ -65,6 +68,7 @@
 
 
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 </html>

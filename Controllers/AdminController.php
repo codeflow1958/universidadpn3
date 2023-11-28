@@ -38,6 +38,7 @@ class AdminController
 
     public function alumnos()
     {
+        $data = $this->model->where("rol", "=", "3");
 
 
         include $_SERVER["DOCUMENT_ROOT"] . "/views/admin/dash_alumno.php";
