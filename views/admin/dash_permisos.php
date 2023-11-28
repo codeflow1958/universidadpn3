@@ -34,20 +34,34 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td> 1</td>
-                        <td><?php echo $data['correo']; ?></td>
-                        <td>admin</td>
-                        <td>activo</td>
-                        <td>
-                            <a href="/admin/permiso/edit"> Editar</a>
-                            <form action="">
-                                <button>delete</button>
-                            </form>
-                        </td>
-                    </tr>
+                    <?php
+                    foreach ($data as $data) {
+                    ?>
+                        <tr>
+                            <td> 1</td>
+                            <td><?php echo $data['correo']; ?></td>
+                            <td><?php
+                                switch ($data['rol']) {
+                                    case '1':
+                                        echo " ADMIN";
+                                        break;
+                                    case '2':
+                                        echo "Maestro";
+                                        break;
+                                    case '3':
+                                        echo " Alumno";
+                                        break;
+                                }    ?></td>
+                            <td>activo</td>
+                            <td>
+                                <a href="/admin/permiso/edit"> Editar</a>
+                                <form action="">
+                                    <button>delete</button>
+                                </form>
+                            </td>
+                        </tr>
 
-
+                    <?php  } ?>
                 </tbody>
             </table>
         </div>

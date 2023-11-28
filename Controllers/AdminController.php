@@ -20,9 +20,9 @@ class AdminController
     public function permisos()
     {
         $data = $this->model->all();
-        echo "<pre>";
-        var_dump($data);
-        echo "</pre>";
+        // echo "<pre>";
+        // var_dump($data);
+        // echo "</pre>";
 
 
 
