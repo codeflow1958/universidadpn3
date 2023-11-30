@@ -46,7 +46,7 @@
                         <td><?php echo $data['fecha_nac']; ?></td>
                         <td>matematicas</td>
                         <td>
-                            <a href="/admin/maestros/edit"> Editar</a>
+                            <a href="/admin/maestros/edit?id=<?php echo $data['id'] ?>"> Editar</a>
                             <form action="/maestro/delete" method="post">
                                 <input type="number" hidden name="id" value=<?php echo $data['id']; ?>>
                                 <button>delete</button>

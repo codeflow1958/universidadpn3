@@ -59,9 +59,9 @@ class AdminController
         include $_SERVER["DOCUMENT_ROOT"] . "/views/admin/edit_permisos.php";
     }
 
-    public function editmaestros()
+    public function editmaestros($id)
     {
-
+        $data = $this->model->find($id);
         include $_SERVER["DOCUMENT_ROOT"] . "/views/admin/edit_maestro.php";
     }
 

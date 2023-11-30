@@ -82,7 +82,9 @@ if ($method === "GET") {
 
             break;
         case '/admin/maestros/edit':
-            $adminController->editmaestros();
+
+            $adminController->editmaestros($_GET["id"]);
+            break;
 
         case '/admin/alumnos':
             $adminController->alumnos();

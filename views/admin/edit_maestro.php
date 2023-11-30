@@ -8,10 +8,11 @@
 </head>
 
 <body>
+
     <div>
         <form action="" method="post">
             <label for="">Correo Electronico</label>
-            <input type="text">
+            <input type="text" disabled value="<?= $data['correo'] ?>">
             <label for="">Nombre(s) </label>
             <input type="text">
             <label for="">Apellido(s) </label>

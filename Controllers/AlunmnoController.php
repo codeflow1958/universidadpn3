@@ -19,4 +19,12 @@ class AlumnoController
 
         header("Location:/admin/alumnos ");
     }
+
+    public function editar($data)
+    {
+        $userModel = new User();
+
+
+        header("Location:/admin/alumnos ");
+    }
 }
