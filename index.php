@@ -101,6 +101,11 @@ if ($method === "GET") {
 
             break;
 
+        case '/admin/clases/add':
+            $adminController->addclases();
+
+            break;
+
         case '/admin/clase/edit':
             $adminController->editclase();
 

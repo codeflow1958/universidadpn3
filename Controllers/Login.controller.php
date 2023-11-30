@@ -40,7 +40,9 @@ class LoginController
         if (count($usuario) != 1) {
             echo "credenciales incorrectas";
         }
-        if ($password == $usuario[0]["password"]) {
+
+
+        if (password_verify($password, $usuario[0]["password"])) {
 
             switch ($usuario[0]["rol"]) {
                 case '1':

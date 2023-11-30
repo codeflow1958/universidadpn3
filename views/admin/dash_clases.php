@@ -19,7 +19,7 @@
             </div>
             <div><label for="">Search</label>
                 <input type="text">
-                <a href="/admin/clase/add"> Agregar</a>
+                <a href="/admin/clases/add"> Agregar</a>
             </div>
         </div>
 

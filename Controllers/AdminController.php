@@ -83,4 +83,9 @@ class AdminController
     {
         include $_SERVER["DOCUMENT_ROOT"] . "/views/admin/edit_clase.php";
     }
+
+    public function addclases()
+    {
+        include $_SERVER["DOCUMENT_ROOT"] . "/views/admin/addclase.php";
+    }
 }
