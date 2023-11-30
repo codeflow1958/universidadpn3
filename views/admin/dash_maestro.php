@@ -36,21 +36,25 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                    foreach ($data as $data) {
+                    ?>
                     <tr>
-                        <td> 1</td>
-                        <td>maestro@maestro</td>
-                        <td>por la curva 13 47 27</td>
-                        <td>24/3/199</td>
+                        <td> <?php echo $data['id']; ?> </td>
+                        <td> <?php echo $data['correo']; ?></td>
+                        <td><?php echo $data['direccion']; ?></td>
+                        <td><?php echo $data['fecha_nac']; ?></td>
                         <td>matematicas</td>
                         <td>
                             <a href="/admin/maestros/edit"> Editar</a>
-                            <form action="">
+                            <form action="/maestro/delete" method="post">
+                                <input type="number" hidden name="id" value="">
                                 <button>delete</button>
                             </form>
                         </td>
                     </tr>
 
-
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

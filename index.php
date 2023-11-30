@@ -2,11 +2,16 @@
 require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/Login.controller.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/AdminController.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/MaestroController.php");
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Controllers/AlunmnoController.php";
+
+
+
 
 // ENRUTADOR
 $loginController = new LoginController();
 $adminController = new AdminController();
 $maestrocontroller = new MaestroController();
+$alumno = new AlumnoController();
 
 // Dividimos la ruta por el signo "?" para no leer los query params. Ejem: /clientes?id=1
 $route = explode("?", $_SERVER["REQUEST_URI"]);
@@ -22,8 +27,26 @@ if ($method === "POST") {
             $loginController->login($_POST["correo"], $_POST["password"]);
             break;
 
+        case '/alumno/delete':
+            echo "eliminando.....  ";
+            $alumno->delete($_POST["id"]);
+
+            break;
+
+        case '/maestro/delete':
+            echo "eliminando.....  ";
+            $maestrocontroller->delete($_POST["id"]);
+
+            break;
+
+        case '/admin/maestro/agregar':
+            echo "agregando";
+
+
+            break;
+
         default:
-            echo "NO ENCONTRAMOS LA RUTA.";
+            echo "NO ENCONTRAMOS post";
             break;
     }
 }
@@ -91,7 +114,7 @@ if ($method === "GET") {
 
 
         default:
-            echo "NO ENCONTRAMOS LA RUTA.";
+            echo "NO ENCONTRAMOS LA RUTA get.";
             break;
     }
 }

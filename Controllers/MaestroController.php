@@ -1,4 +1,7 @@
 <?php
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Models/User.php";
+
+
 
 class MaestroController
 {
@@ -11,5 +14,21 @@ class MaestroController
     public function readalumno()
     {
         include $_SERVER["DOCUMENT_ROOT"] . "/views/maestro/readalunos.php";
+    }
+
+    public function delete($id)
+    {
+        $userModel = new User();
+        $userModel->destroy($id);
+
+        header("Location:/admin/maestros ");
+    }
+
+    public function add()
+    {
+        $userModel = new User();
+        $userModel->create();
+
+        header("Location:/admin/maestros ");
     }
 }

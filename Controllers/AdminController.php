@@ -31,6 +31,7 @@ class AdminController
 
     public function maestros()
     {
+        $data = $this->model->where("rol", "=", "2");
 
 
         include $_SERVER["DOCUMENT_ROOT"] . "/views/admin/dash_maestro.php";

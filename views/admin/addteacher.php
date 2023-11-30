@@ -8,8 +8,9 @@
 </head>
 
 <body>
+    <h1> crear maestro</h1>
     <div>
-        <form action="" method="post">
+        <form action=" /admin/maestro/agregar" method="post">
             <label for="">Correo Electronico</label>
             <input type="text">
             <label for="">Nombre(s) </label>
@@ -20,12 +21,15 @@
             <input type="text">
             <label for="">Fecha de Nacimiento</label>
             <input type="date">
-        </form>
+            <input type="text" value="admin" name="password">
+            <input type="text" value="2" name="rol ">
+
     </div>
     <div>
         <button>Close</button>
-        <button>Crear</button>
+        <button type="submit">Crear</button>
     </div>
+    </form>
 </body>
 
 </html>
