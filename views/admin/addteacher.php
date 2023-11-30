@@ -12,17 +12,17 @@
     <div>
         <form action=" /admin/maestro/agregar" method="post">
             <label for="">Correo Electronico</label>
-            <input type="text">
+            <input type="text" name="correo">
             <label for="">Nombre(s) </label>
-            <input type="text">
+            <input type="text" name="nombre">
             <label for="">Apellido(s) </label>
-            <input type="text">
+            <input type="text" name="apellido">
             <label for="">Direccion</label>
-            <input type="text">
+            <input type="text" name="direccion">
             <label for="">Fecha de Nacimiento</label>
-            <input type="date">
-            <input type="text" value="admin" name="password">
-            <input type="text" value="2" name="rol ">
+            <input type="date" name="fecha_nac">
+            <input type="text" hidden value="maestro" name="password">
+            <input type="number" hidden value=2 name="rol">
 
     </div>
     <div>

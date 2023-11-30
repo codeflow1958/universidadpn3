@@ -55,14 +55,20 @@ class Model
      */
     public function create($data)
     {
-        try {
-            // Esto hace que sin importar los pares de clave y valor de la variable $data, el $query sea reutilizable.
-            $keys = array_keys($data);
-            $keysString = implode(", ", $keys);
+        $correo = $data["correo"];
+        $nombre = $data["nombre"];
+        $apellido = $data["apellido"];
+        $direccion = $data["direccion"];
+        $fecha = $data["fecha_nac"];
+        $rol = $data["rol"];
+        $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
 
-            $values = array_values($data);
-            $valuesString = implode("', '", $values);
-            $query = "insert into {$this->table}($keysString) values ('$valuesString')";
+
+
+
+        try {
+            $query = "INSERT INTO {$this->table}(correo, password, nombre, apellido, direccion, fecha_nac, rol )
+                                    VALUES ('$correo', '$password', '$nombre', '$apellido', '$direccion', '$fecha', '$rol') ";
 
             $res = $this->db->query($query);
 
@@ -78,6 +84,30 @@ class Model
             echo "Error: " . $e->getMessage();
         }
     }
+    // {
+    //     try {
+    //         // Esto hace que sin importar los pares de clave y valor de la variable $data, el $query sea reutilizable.
+    //         $keys = array_keys($data);
+    //         $keysString = implode(", ", $keys);
+
+    //         $values = array_values($data);
+    //         $valuesString = implode("', '", $values);
+    //         $query = "insert into {$this->table}($keysString) values ('$valuesString')";
+
+    //         $res = $this->db->query($query);
+
+    //         if ($res) {
+    //             $ultimoId = $this->db->insert_id;
+    //             $data = $this->find($ultimoId);
+
+    //             return $data;
+    //         } else {
+    //             return "No se pudo crear el cliente";
+    //         }
+    //     } catch (mysqli_sql_exception $e) {
+    //         echo "Error: " . $e->getMessage();
+    //     }
+    // }
 
     /**
      * Método para actualizar un registro en la tabla.

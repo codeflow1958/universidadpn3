@@ -40,7 +40,15 @@ if ($method === "POST") {
             break;
 
         case '/admin/maestro/agregar':
-            echo "agregando";
+
+
+            $maestrocontroller->agregar($_POST);
+
+            break;
+
+        case '/admin/alumno/agregar':
+
+            $alumno->agregar($_POST);
 
 
             break;

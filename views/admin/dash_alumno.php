@@ -44,20 +44,20 @@
                     <?php
                     foreach ($data as $data) {
                     ?>
-                        <tr>
-                            <td><?php echo $data['id']; ?> </td>
-                            <td> <?php echo $data['nombre']; ?></td>
-                            <td> <?php echo $data['correo']; ?></td>
-                            <td><?php echo $data['direccion']; ?></td>
-                            <td> <?php echo $data['fecha_nac']; ?></td>
-                            <td>
-                                <a href="/admin/alumno/edit"> Editar</a>
-                                <form action="/alumno/delete" method="post">
-                                    <input type="text" hidden value=" <?= $data["id"] ?>" name="id">
-                                    <button type="submit">delete</button>
-                                </form>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td><?php echo $data['id']; ?> </td>
+                        <td> <?php echo $data['nombre']; ?></td>
+                        <td> <?php echo $data['correo']; ?></td>
+                        <td><?php echo $data['direccion']; ?></td>
+                        <td> <?php echo $data['fecha_nac']; ?></td>
+                        <td>
+                            <a href="/admin/alumno/edit"> Editar</a>
+                            <form action="/alumno/delete" method="post">
+                                <input type="number" hidden name="id" value=<?php echo $data['id']; ?>>
+                                <button type="submit">delete</button>
+                            </form>
+                        </td>
+                    </tr>
                     <?php  } ?>
 
                 </tbody>

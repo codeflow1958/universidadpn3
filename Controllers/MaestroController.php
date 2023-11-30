@@ -24,10 +24,10 @@ class MaestroController
         header("Location:/admin/maestros ");
     }
 
-    public function add()
+    public function agregar($data)
     {
         $userModel = new User();
-        $userModel->create();
+        $userModel->create($data);
 
         header("Location:/admin/maestros ");
     }

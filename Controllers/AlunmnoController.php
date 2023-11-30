@@ -11,4 +11,12 @@ class AlumnoController
         $userModel->destroy($id);
         header("Location:/admin/alumnos");
     }
+
+    public function agregar($data)
+    {
+        $userModel = new User();
+        $userModel->create($data);
+
+        header("Location:/admin/alumnos ");
+    }
 }

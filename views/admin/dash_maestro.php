@@ -48,7 +48,7 @@
                         <td>
                             <a href="/admin/maestros/edit"> Editar</a>
                             <form action="/maestro/delete" method="post">
-                                <input type="number" hidden name="id" value="">
+                                <input type="number" hidden name="id" value=<?php echo $data['id']; ?>>
                                 <button>delete</button>
                             </form>
                         </td>
