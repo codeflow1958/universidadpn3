@@ -29,6 +29,17 @@ class MaestroController
         $userModel = new User();
         $userModel->create($data);
 
-        header("Location:/admin/maestros ");
+        header("Location:/admin/maestros");
+    }
+
+    public function editar($data)
+    {
+        $userModel = new User();
+        $userModel->update($data);
+        //var_dump($data);
+
+        header("Location:/admin/maestros");
     }
 }
+
+//185443661

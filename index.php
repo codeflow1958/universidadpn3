@@ -46,6 +46,13 @@ if ($method === "POST") {
 
             break;
 
+        case '/admin/maestro/editar':
+
+
+            $maestrocontroller->editar($_POST);
+
+            break;
+
         case '/admin/alumno/agregar':
 
             $alumno->agregar($_POST);

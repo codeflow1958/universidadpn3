@@ -116,16 +116,30 @@ class Model
      */
     public function update($data)
     {
-        // Esto hace que sin importar los pares de clave y valor de la variable $data, el $query sea reutilizable.
-        $updatePairs = [];
-
-        foreach ($data as $key => $value) {
-            $updatePairs[] = "$key = '$value'";
-        }
-
         session_start();
-        $query = "update {$this->table} set " . implode(", ", $updatePairs) . "where id = {$_SESSION["clienteid_edit"]}";
-        $this->db->query($query);
+        $res = $this->db->query("UPDATE {$this->table} 
+                                         SET nombre = '{$data["nombre"]}', 
+                                         apellido = '{$data["apellido"]}',
+                                         direccion = '{$data["direccion"]}', 
+                                         fecha_nac = CASE 
+                                                      WHEN fecha_nac = '000-00-00'                
+                                                           THEN '{$data["fecha_nac"]}'
+                                                           ELSE  fecha_nac
+                                                           END
+                                        WHERE id = {$_SESSION["cliente_edit"]}");
+
+
+
+        // Esto hace que sin importar los pares de clave y valor de la variable $data, el $query sea reutilizable.
+        // $updatePairs = [];
+
+        // foreach ($data as $key => $value) {
+        //     $updatePairs[] = "$key = '$value'";
+        // }
+
+        // session_start();
+        // $query = "update {$this->table} set " . implode(", ", $updatePairs) . "where id = {$_SESSION["cliente_edit"]}";
+        // $this->db->query($query);
     }
 
     /**
