@@ -1,6 +1,8 @@
 <?php
 
 require_once $_SERVER["DOCUMENT_ROOT"] . "/Models/User.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/Models/Materia.php";
+
 
 class AdminController
 {
@@ -47,13 +49,15 @@ class AdminController
 
     public function clases()
     {
-
+        $info = new Materia();
+        $materia = $info->materias();
 
         include $_SERVER["DOCUMENT_ROOT"] . "/views/admin/dash_clases.php";
     }
 
-    public function editpermisos()
+    public function editpermisos($id)
     {
+        $data = $this->model->find($id);
 
 
         include $_SERVER["DOCUMENT_ROOT"] . "/views/admin/edit_permisos.php";
@@ -74,13 +78,24 @@ class AdminController
         include $_SERVER["DOCUMENT_ROOT"] . "/views/admin/addalumno.php";
     }
 
-    public function editalumno()
+    public function editalumno($id)
     {
+        $data = $this->model->find($id);
+
+
         include $_SERVER["DOCUMENT_ROOT"] . "/views/admin/edit_alumno.php";
     }
 
-    public function editclase()
+    public function editclase($id)
     {
+
+        $info = new Materia();
+        $materia = $info->find($id);
+
+        $data = $this->model->where("rol", "=", "2");
+        var_dump($profe);
+
+
         include $_SERVER["DOCUMENT_ROOT"] . "/views/admin/edit_clase.php";
     }
 

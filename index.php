@@ -2,7 +2,8 @@
 require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/Login.controller.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/AdminController.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/MaestroController.php");
-require_once $_SERVER["DOCUMENT_ROOT"] . "/Controllers/AlunmnoController.php";
+require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/AlunmnoController.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/MateriaController.php");
 
 
 
@@ -12,6 +13,8 @@ $loginController = new LoginController();
 $adminController = new AdminController();
 $maestrocontroller = new MaestroController();
 $alumno = new AlumnoController();
+$MateriaController = new MateriaController();
+
 
 // Dividimos la ruta por el signo "?" para no leer los query params. Ejem: /clientes?id=1
 $route = explode("?", $_SERVER["REQUEST_URI"]);
@@ -28,13 +31,13 @@ if ($method === "POST") {
             break;
 
         case '/alumno/delete':
-            echo "eliminando.....  ";
+
             $alumno->delete($_POST["id"]);
 
             break;
 
         case '/maestro/delete':
-            echo "eliminando.....  ";
+
             $maestrocontroller->delete($_POST["id"]);
 
             break;
@@ -59,6 +62,26 @@ if ($method === "POST") {
 
 
             break;
+
+        case '/admin/alumno/editar':
+
+            $alumno->editar($_POST);
+            break;
+
+        case '/admin/rol/edit':
+
+            $alumno->editar($_POST);
+
+            break;
+
+        case '/admin/clase/edit':
+
+            //$MateriaController->editar($_POST);
+
+            var_dump($_POST);
+
+            break;
+
 
         default:
             echo "NO ENCONTRAMOS post";
@@ -102,7 +125,8 @@ if ($method === "GET") {
             break;
 
         case '/admin/alumno/edit':
-            $adminController->editalumno();
+            $adminController->editalumno($_GET["id"]);
+
             break;
 
         case '/admin/clases':
@@ -116,7 +140,8 @@ if ($method === "GET") {
             break;
 
         case '/admin/clase/edit':
-            $adminController->editclase();
+            $adminController->editclase($_GET["id"]);
+
 
             break;
 
@@ -126,7 +151,7 @@ if ($method === "GET") {
             break;
 
         case '/admin/permiso/edit':
-            $adminController->editpermisos();
+            $adminController->editpermisos($_GET["id"]);
             break;
 
         case '/maestro/alumnos/lista':

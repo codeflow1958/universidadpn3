@@ -30,7 +30,7 @@ $_SESSION["cliente_edit"] = $data["id"];
     </div>
     <div>
         <a href="/admin/maestros"> cerrar</a>
-        <button>Guardar Cambios</button>
+        <button type="submit">Guardar Cambios</button>
     </div>
     </form>
 </body>

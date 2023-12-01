@@ -118,7 +118,8 @@ class Model
     {
         session_start();
         $res = $this->db->query("UPDATE {$this->table} 
-                                         SET nombre = '{$data["nombre"]}', 
+                                         SET rol= '{$data["rol"]}',
+                                          nombre = '{$data["nombre"]}', 
                                          apellido = '{$data["apellido"]}',
                                          direccion = '{$data["direccion"]}', 
                                          fecha_nac = CASE 
@@ -164,6 +165,17 @@ class Model
     public function where($column, $operator, $value)
     {
         $res = $this->db->query("SELECT * FROM {$this->table} WHERE $column $operator '$value' ");
+        $data = $res->fetch_all(MYSQLI_ASSOC);
+
+        return $data;
+    }
+
+
+    public function materias()
+    {
+        $res = $this->db->query("SELECT u.id  , u.nombre  AS profesor, m.nombre_materia, m.id
+                                FROM usuarios u
+                                INNER JOIN materia m ON m.id  = u.id_materias ");
         $data = $res->fetch_all(MYSQLI_ASSOC);
 
         return $data;

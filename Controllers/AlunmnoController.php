@@ -23,8 +23,9 @@ class AlumnoController
     public function editar($data)
     {
         $userModel = new User();
+        $userModel->update($data);
+        //var_dump($data);
 
-
-        header("Location:/admin/alumnos ");
+        header("Location:/admin/permisos");
     }
 }

@@ -37,22 +37,32 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td> 1</td>
-                        <td> guarani</td>
-                        <td> lucas martinez</td>
-                        <td>13</td>
+                    <?php
+                    foreach ($materia as $materia) {
 
 
-                        <td>
-                            <a href="/admin/clase/edit"> Editar</a>
-                            <form action="">
-                                <button>Delete</button>
-                            </form>
-                        </td>
-                    </tr>
+                    ?>
 
 
+                        <tr>
+
+                            <td><?php echo $materia['id']; ?> </td>
+                            <td><?= $materia['nombre_materia']; ?> </td>
+                            <td><?= $materia['profesor']; ?> </td>
+                            <td> </td>
+
+
+                            <td>
+                                <a href="/admin/clase/edit?id=<?php echo $materia['id'] ?>"> Editar</a>
+
+                                <form action="">
+
+                                    <button>Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+
+                    <?php  } ?>
                 </tbody>
             </table>
         </div>

@@ -14,13 +14,28 @@
         <h1> Editar Clase</h1>
 
         <div>
-            <label for=""> Nombre de la Clase</label>
-            <input type="text">
-            <label for=""> Maestros Disponibles para la Clase</label>
-            <select name="" id="">
-                <option value="">luids</option>
-            </select>
+            <form action="/admin/">
+                <label for=""> Nombre de la Clase</label>
+                <input type="text" disabled value=" <?= $materia['nombre_materia'] ?>">
+                <input type="text" hidden value=" <?= $materia['id'] ?>" name="id_materia">
+                <label for=""> Maestro asignado</label>
+
+
+
+                <select name="" id="">
+                    <?php
+                    foreach ($data as $data) {
+
+
+                    ?>
+                        <option value=<?= $data['id'] ?> name="id"> <?= $data['nombre'] ?>. <?= $data['apellido'] ?>
+                        </option>
+                    <?php } ?>
+                </select>
+
+            </form>
         </div>
+
 
     </div>
 

@@ -37,10 +37,10 @@
                     <?php
                     foreach ($data as $data) {
                     ?>
-                        <tr>
-                            <td> <?php echo $data['id']; ?></td>
-                            <td><?php echo $data['correo']; ?></td>
-                            <td><?php
+                    <tr>
+                        <td> <?php echo $data['id']; ?></td>
+                        <td><?php echo $data['correo']; ?></td>
+                        <td><?php
                                 switch ($data['rol']) {
                                     case '1':
                                         echo " ADMIN";
@@ -52,12 +52,12 @@
                                         echo " ALUMNO";
                                         break;
                                 }    ?></td>
-                            <td>activo</td>
-                            <td>
-                                <a href="/admin/permiso/edit"> Editar</a>
+                        <td>activo</td>
+                        <td>
+                            <a href="/admin/permiso/edit?id=<?php echo $data['id'] ?>"> Editar</a>
 
-                            </td>
-                        </tr>
+                        </td>
+                    </tr>
 
                     <?php  } ?>
                 </tbody>

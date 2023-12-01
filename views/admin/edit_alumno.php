@@ -1,3 +1,8 @@
+<?php
+!isset($data) && header("Location:/admin/alumnos ");
+session_start();
+$_SESSION["cliente_edit"] = $data["id"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,23 +15,24 @@
 <body>
     <h1> agregar alumno</h1>
     <div>
-        <form action="" method="post">
+        <form action="/admin/alumno/editar" method="post">
             <label for="">Correo Electronico</label>
-            <input type="text">
+            <input type="text" disabled value="<?= $data['correo'] ?> " name="correo">
             <label for="">Nombre(s) </label>
-            <input type="text">
+            <input type="text" placeholder=" <?= $data['nombre'] ?>" name="nombre">
             <label for="">Apellido(s) </label>
-            <input type="text">
+            <input type="text" placeholder=" <?= $data['apellido'] ?>" name="apellido">
             <label for="">Direccion</label>
-            <input type="text">
+            <input type="text" placeholder=" <?= $data['direccion'] ?>" name="direccion">
             <label for="">Fecha de Nacimiento</label>
-            <input type="date">
-        </form>
+            <input type="date" placeholder=" <?= $data['fecha_nac'] ?>" name="fecha_nac">
+
     </div>
     <div>
-        <button>Close</button>
-        <button>Guardar cambios</button>
+        <a href="/admin/alumnos"> cerrar</a>
+        <button type="submit">Guardar cambios</button>
     </div>
+    </form>
 </body>
 
 </html>

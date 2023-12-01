@@ -8,7 +8,7 @@
 
 
 
-    <title>Permisos</title>
+    <title>alumnos</title>
 </head>
 
 <body>
@@ -51,7 +51,7 @@
                         <td><?php echo $data['direccion']; ?></td>
                         <td> <?php echo $data['fecha_nac']; ?></td>
                         <td>
-                            <a href="/admin/alumno/edit"> Editar</a>
+                            <a href="/admin/alumno/edit?id=<?php echo $data['id'] ?>"> Editar</a>
                             <form action="/alumno/delete" method="post">
                                 <input type="number" hidden name="id" value=<?php echo $data['id']; ?>>
                                 <button type="submit">delete</button>
