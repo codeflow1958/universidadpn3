@@ -93,7 +93,7 @@ class AdminController
         $materia = $info->find($id);
 
         $data = $this->model->where("rol", "=", "2");
-        var_dump($profe);
+
 
 
         include $_SERVER["DOCUMENT_ROOT"] . "/views/admin/edit_clase.php";

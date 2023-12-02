@@ -74,9 +74,9 @@ if ($method === "POST") {
 
             break;
 
-        case '/admin/clase/edit':
+        case '/admin/clase/delete':
 
-            //$MateriaController->editar($_POST);
+            $MateriaController->borrar($_POST["id"]);
 
             var_dump($_POST);
 

@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <title>Admin</title>
 </head>
 
-<body class="">
+<body class="bg-[#f5f6fa]">
 
     <div class="flex">
-        <div class="bg-gray ">
+        <div class="bg-gray-800 text-gray-100 w-64 px-4 py-8 h-screen">
             <div class=" border border-b-1 space-y-10">
                 <h1> universidad</h1>
             </div>
@@ -22,16 +23,20 @@
                 <p>administrador</p>
             </div>
             <div>
-                <form class=" flex " action="">
+                <nav>
                     <p>MENU ADMINISTRACION </p>
-                    <a href="/admin/permisos">Permisos</a>
-                    <a href="/admin/maestros"> Maestros</a>
-                    <a href="/admin/alumnos"> Alumnos</a>
-                    <a href="/admin/clases"> Clases</a>
-                </form>
+                    <a href="/admin/permisos" class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
+                        Permisos</a>
+                    <a href="/admin/maestros" class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
+                        Maestros</a>
+                    <a href="/admin/alumnos" class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
+                        Alumnos</a>
+                    <a href="/admin/clases" class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
+                        Clases</a>
+                </nav>
             </div>
         </div>
-        <div class="">
+        <div class="pt-4 flex-1">
             <div class=" flex gap-44">
                 <div>
                     <p>home</p>

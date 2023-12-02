@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>edit clase</title>
 
 </head>
@@ -13,14 +14,20 @@
     <div>
         <h1> Editar Clase</h1>
 
-        <div>
-            <label for=""> Nombre de la Clase</label>
-            <input type="text">
-            <label for=""> Maestros Disponibles para la Clase</label>
-            <select name="" id="">
-                <option value="">luids</option>
-            </select>
-        </div>
+        <form action="/admin/clase/add" method="post">
+            <div>
+                <label for=""> Nombre de la Clase </label>
+                <input type="text" name="clase">
+                <label for=""> Maestros Disponibles para la Clase</label>
+                <select name="" id="">
+                    <option name="maestro_id" value="">luids</option>
+                </select>
+            </div>
+            <div>
+                <button> Guardar cmabios</button>
+            </div>
+
+        </form>
 
     </div>
 

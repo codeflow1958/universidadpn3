@@ -173,7 +173,7 @@ class Model
 
     public function materias()
     {
-        $res = $this->db->query("SELECT u.id  , u.nombre  AS profesor, m.nombre_materia, m.id
+        $res = $this->db->query("SELECT u.id  , u.nombre, u.apellido   AS profesor, m.nombre_materia, m.id
                                 FROM usuarios u
                                 INNER JOIN materia m ON m.id  = u.id_materias ");
         $data = $res->fetch_all(MYSQLI_ASSOC);

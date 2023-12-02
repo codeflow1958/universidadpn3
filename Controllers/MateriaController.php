@@ -10,4 +10,10 @@ class MateriaController
     {
         $this->model = new Materia();
     }
+
+    public function borrar($id)
+    {
+
+        $this->model->destroy($id);
+    }
 }
