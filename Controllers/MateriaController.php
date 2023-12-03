@@ -15,5 +15,14 @@ class MateriaController
     {
 
         $this->model->destroy($id);
+
+        header("Location:/admin/clases");
+    }
+
+    public function agregar($request)
+    {
+        //var_dump($request);
+
+        // header("Location:/admin/clases");
     }
 }

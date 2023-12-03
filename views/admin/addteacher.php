@@ -8,10 +8,10 @@
     <title>add maestro</title>
 </head>
 
-<body>
+<body class=" flex  flex-col  items-center justify-center h-screen bg-[#fff5d2]">
     <h1> crear maestro</h1>
-    <div>
-        <form action=" /admin/maestro/agregar" method="post">
+    <div class="flex flex-col">
+        <form action=" /admin/maestro/agregar" method="post" class="flex flex-col">
             <label for="">Correo Electronico</label>
             <input type="text" name="correo">
             <label for="">Nombre(s) </label>
@@ -27,8 +27,8 @@
 
     </div>
     <div>
-        <button>Close</button>
-        <button type="submit">Crear</button>
+        <a class="bg-gray-500 text-white font-bold py-2 px-4 rounded" href="/admin/maestros"> close</a>
+        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit">Crear</button>
     </div>
     </form>
 </body>

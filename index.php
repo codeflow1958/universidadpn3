@@ -82,6 +82,14 @@ if ($method === "POST") {
 
             break;
 
+        case '/admin/clase/agregar':
+
+            $MateriaController->agregar($_POST);
+
+            //var_dump($_POST);
+
+            break;
+
 
         default:
             echo "NO ENCONTRAMOS post";

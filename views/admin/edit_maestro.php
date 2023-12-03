@@ -38,26 +38,28 @@ $_SESSION["cliente_edit"] = $data["id"];
             </div>
         </div>
 
-        <div>
+        <div class="pt-4 flex-1">
             <form action="/admin/maestro/editar" method="post">
-                <label for="">Correo Electronico</label>
-                <input type="text" disabled value="<?= $data['correo'] ?> " name="correo">
-                <label for="">Nombre(s) </label>
-                <input type="text" placeholder=" <?= $data['nombre'] ?>" name="nombre">
-                <label for="">Apellido(s) </label>
-                <input type="text" placeholder=" <?= $data['apellido'] ?>" name="apellido">
-                <label for="">Direccion</label>
-                <input type="text" placeholder=" <?= $data['direccion'] ?>" name="direccion">
-                <label for="">Fecha de Nacimiento</label>
-                <input type="date" placeholder=" <?= $data['fecha_nac'] ?>" name="fecha_nac">
+                <div class=" flex  flex-col  items-center justify-center h-screen bg-[#fff5d2]">
+                    <label for="">Correo Electronico</label>
+                    <input type="text" disabled value="<?= $data['correo'] ?> " name="correo">
+                    <label for="">Nombre(s) </label>
+                    <input type="text" placeholder=" <?= $data['nombre'] ?>" name="nombre">
+                    <label for="">Apellido(s) </label>
+                    <input type="text" placeholder=" <?= $data['apellido'] ?>" name="apellido">
+                    <label for="">Direccion</label>
+                    <input type="text" placeholder=" <?= $data['direccion'] ?>" name="direccion">
+                    <label for="">Fecha de Nacimiento</label>
+                    <input type="date" placeholder=" <?= $data['fecha_nac'] ?>" name="fecha_nac">
 
+
+                    <div>
+                        <a class="bg-gray-500 text-white font-bold py-2 px-4 rounded" href="/admin/maestros"> cerrar</a>
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit">Guardar</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div>
-            <a href="/admin/maestros"> cerrar</a>
-            <button type="submit">Guardar Cambios</button>
-        </div>
-        </form>
-    </div>
 </body>
 
 </html>

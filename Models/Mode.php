@@ -84,30 +84,33 @@ class Model
             echo "Error: " . $e->getMessage();
         }
     }
-    // {
-    //     try {
-    //         // Esto hace que sin importar los pares de clave y valor de la variable $data, el $query sea reutilizable.
-    //         $keys = array_keys($data);
-    //         $keysString = implode(", ", $keys);
 
-    //         $values = array_values($data);
-    //         $valuesString = implode("', '", $values);
-    //         $query = "insert into {$this->table}($keysString) values ('$valuesString')";
 
-    //         $res = $this->db->query($query);
+    public function edit2($data)
+    {
+        try {
+            // Esto hace que sin importar los pares de clave y valor de la variable $data, el $query sea reutilizable.
+            $keys = array_keys($data);
+            $keysString = implode(", ", $keys);
 
-    //         if ($res) {
-    //             $ultimoId = $this->db->insert_id;
-    //             $data = $this->find($ultimoId);
+            $values = array_values($data);
+            $valuesString = implode("', '", $values);
+            $query = "insert into {$this->table}($keysString) values ('$valuesString')";
 
-    //             return $data;
-    //         } else {
-    //             return "No se pudo crear el cliente";
-    //         }
-    //     } catch (mysqli_sql_exception $e) {
-    //         echo "Error: " . $e->getMessage();
-    //     }
-    // }
+            $res = $this->db->query($query);
+
+            if ($res) {
+                $ultimoId = $this->db->insert_id;
+                $data = $this->find($ultimoId);
+
+                return $data;
+            } else {
+                return "No se pudo crear el cliente";
+            }
+        } catch (mysqli_sql_exception $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
 
     /**
      * Método para actualizar un registro en la tabla.
