@@ -18,14 +18,12 @@
             <div class="flex flex-col">
                 <label for=""> Nombre de la Clase </label>
                 <input type="text" name="clase">
-                <label for=""> Maestros Disponibles para la Clase</label>
-                <select name="" id="">
-                    <option name="maestro_id" value="">luids</option>
-                </select>
+
+
             </div>
             <div>
-                <a href="/admin/clases"> cerrar</a>
-                <button> Guardar cambios</button>
+                <a class="bg-gray-500 text-white font-bold py-2 px-4 rounded" href="/admin/clases"> cerrar</a>
+                <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded"> Guardar </button>
             </div>
 
         </form>
