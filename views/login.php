@@ -12,7 +12,7 @@
     <div class="">
         <div class=" h-[300px] w-[300px]"><img src="/assets/logo.jpg"></div>
 
-        <form action="/login" method="post">
+        <form action="/home" method="post">
             <div>
                 <label for="correo"> Correo</label>
                 <input class="m-2 w-full" type="email" id="correo" name="correo">

@@ -92,7 +92,7 @@ class AdminController
         $info = new Materia();
         $materia = $info->find($id);
 
-        $data = $this->model->where("rol", "=", "2");
+        $data = $this->model->findteacher();
 
 
 

@@ -33,6 +33,10 @@
             </div>
         </div>
         <div>
+            <header class=" bg-white flex justify-between h-12  ">
+                <a class=" start-0" href="/home/admin">HOME</a>
+                <p class=" end-0"> administrador</p>
+            </header>
             <div>
                 <h1> LISTA DE PERMISOS</h1>
             </div>

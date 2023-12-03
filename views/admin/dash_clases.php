@@ -32,7 +32,14 @@
                 </nav>
             </div>
         </div>
-        <div>
+
+        </header>
+        <div class=" ml-2 w-max ">
+            <header class=" bg-white flex justify-between h-12  ">
+                <a class=" start-0" href="/home/admin">HOME</a>
+                <p class=" end-0"> administrador</p>
+            </header>
+
             <div>
                 <h1> Lista de Clases</h1>
             </div>
@@ -41,13 +48,16 @@
                 <div>
                     <button>Copy</button><button>Excel</button><button>pdf</button><button>colum </button>
                 </div>
-                <div><label for="">Search</label>
+                <div class=" flex-justufy-between   "><label for="">Search</label>
                     <input type="text">
-                    <a href="/admin/clases/add"> Agregar</a>
                 </div>
             </div>
 
-            <div>
+            <div class="mt-3">
+                <div class="max-w-lg  flex-justify-between mb-3">
+                    <a class="bg-blue-500 text-white font-bold py-2 px-4 rounded end-0" href="/admin/clases/add">
+                        Agregar</a>
+                </div>
                 <table class=" table-auto border-separate border-spacing-2 border border-slate-400">
                     <thead>
                         <tr>
@@ -62,25 +72,25 @@
                     </thead>
                     <tbody>
                         <?php
+
                         foreach ($materia as $materia) {
                         ?>
-                        <tr>
-                            <td class="border border-slate-300 w-10"><?php echo $materia['id']; ?> </td>
-                            <td class="border border-slate-300 w-40"><?= $materia['nombre_materia']; ?> </td>
-                            <td class="border border-slate-300  w-60">
-                                <?= $materia['nombre'] . "   " . $materia['profesor']  ?>
-                            </td>
-                            <td class="border border-slate-300"> </td>
-                            <td class="border border-slate-300 flex space-x-2">
-                                <a class="bg-blue-500 text-white font-bold py-2 px-4 rounded"
-                                    href="/admin/clase/edit?id=<?php echo $materia['id'] ?>"> Editar</a>
+                            <tr>
+                                <td class="border border-slate-300 w-10"><?php echo $materia['id']; ?> </td>
+                                <td class="border border-slate-300 w-40"><?= $materia['Nombre_Materia']; ?> </td>
+                                <td class="border border-slate-300  w-60">
+                                    <?= $materia['Nombre_Maestro'] . "   " . $materia['apellido']  ?>
+                                </td>
+                                <td class="border border-slate-300"><?= $materia['Total_Alumnos']; ?> </td>
+                                <td class="border border-slate-300 flex space-x-2">
+                                    <a class="bg-blue-500 text-white font-bold py-2 px-4 rounded" href="/admin/clase/edit?id=<?php echo $materia['id'] ?>"> Editar</a>
 
-                                <form action="/admin/clase/delete" method="post">
-                                    <input type="number" hidden name="id" value=<?php echo $materia['id']; ?>>
-                                    <button class="bg-red-500 text-white font-bold py-2 px-4 rounded">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
+                                    <form action="/admin/clase/delete" method="post">
+                                        <input type="number" hidden name="id" value=<?php echo $materia['id']; ?>>
+                                        <button class="bg-red-500 text-white font-bold py-2 px-4 rounded">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
 
                         <?php  } ?>
                     </tbody>

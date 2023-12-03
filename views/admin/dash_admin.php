@@ -11,7 +11,8 @@
     <title>Admin</title>
 </head>
 
-<body class="bg-[#f5f6fa]">
+<body class="bg-[#f5f6fa] mr-3">
+
 
     <div class="flex">
         <div class="bg-gray-800 text-gray-100 w-64 px-4 py-8 h-screen">
@@ -36,21 +37,18 @@
                 </nav>
             </div>
         </div>
-        <div class="pt-4 flex-1">
-            <div class=" flex gap-44">
-                <div>
-                    <p>home</p>
-                </div>
-                <div>
-                    <p> administrador</p>
-                </div>
-            </div>
-            <div>
-                <p>DASHBORD</p>
+        <div class="ml-2 flex-1 bg-[#f5f6fa] space-y-5 ">
+            <header class=" bg-white flex justify-between h-12  ">
+                <a class=" start-0" href="/home/admin">HOME</a>
+                <p class=" end-0"> administrador</p>
+            </header>
 
-                <p> home/dashboard</p>
+            <div class=" flex justify-between">
+                <p class=" font-bold text-lg start">DASHBORD</p>
+
+                <p class=" end"> home/dashboard</p>
             </div>
-            <div>
+            <div class=" bg-white w-80 ">
                 <h1>Bienvenido</h1>
                 <p> selecciona la accion aque quiras realizar </p>
             </div>

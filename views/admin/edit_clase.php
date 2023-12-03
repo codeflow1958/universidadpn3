@@ -1,3 +1,8 @@
+<?php
+!isset($data) && header("Location:/admin/alumnos ");
+session_start();
+$_SESSION["materia"] = $materia["id"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,35 +14,38 @@
 
 </head>
 
-<body>
+<body class=" flex items-center justify-center h-screen">
 
     <div>
         <h1> Editar Clase</h1>
 
         <div>
             <form action="/admin/clase/edit" method="post">
-                <label for=""> Nombre de la Clase</label>
-                <input type="text" disabled value=" <?= $materia['nombre_materia'] ?>">
-                <input type="text" hidden value=" <?= $materia['id'] ?>" name="id_materia">
-                <label for=""> Maestro asignado</label>
+                <div class="flex flex-col">
+                    <label for=""> Nombre de la Clase</label>
+                    <input type="text" disabled value=" <?= $materia['nombre_materia'] ?>">
+                    <input type="text" hidden value=" <?= $materia['id'] ?>" name="id_materia">
+                    <label for=""> Maestro asignado</label>
 
 
 
-                <select name="" id="">
-                    <?php
-                    foreach ($data as $data) {
+                    <select name="maestro" id="">
+                        <?php
+                        foreach ($data as $data) {
 
 
-                    ?>
-                        <option value=<?= $data['id'] ?> name="id"> <?= $data['nombre'] ?>. <?= $data['apellido'] ?>
-                        </option>
-                    <?php } ?>
-                </select>
-                <div>
-                    <a href="/admin/clases"> cerrar</a>
-                    <button type="submit">Guardar cambios</button>
+                        ?>
+                            <option value=<?= $data['id'] ?> name="id_maestro"> <?= $data['nombre'] ?>.
+                                <?= $data['apellido'] ?>
+                            </option>
+                        <?php } ?>
+                    </select>
+                    <div>
+                        <a class="bg-gray-500 text-white font-bold py-2 px-4 rounded" href="/admin/clases"> cerrar</a>
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit">Guardar
+                            cambios</button>
+                    </div>
                 </div>
-
             </form>
         </div>
 

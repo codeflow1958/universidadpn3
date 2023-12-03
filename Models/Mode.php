@@ -176,11 +176,51 @@ class Model
 
     public function materias()
     {
-        $res = $this->db->query("SELECT u.id  , u.nombre, u.apellido   AS profesor, m.nombre_materia, m.id
-                                FROM usuarios u
-                                INNER JOIN materia m ON m.id  = u.id_materias ");
+        $res = $this->db->query("SELECT
+    m.id, m.nombre_materia  AS Nombre_Materia,
+    COALESCE(u.nombre, 'Sin Maestro') AS Nombre_Maestro,
+    u.apellido as apellido,
+    COUNT(DISTINCT a.id_alumno) AS Total_Alumnos
+          FROM
+            materia m
+          LEFT JOIN
+            usuarios u ON m.id  = u.id_materias AND u.rol = 2
+          LEFT JOIN
+            asignacion a ON m.id = a.id_materia
+          GROUP BY
+            m.id, u.id
+          ORDER BY
+            m.nombre_materia;");
         $data = $res->fetch_all(MYSQLI_ASSOC);
 
         return $data;
+    }
+
+
+    public function findteacher()
+    {
+
+        $res = $this->db->query("SELECT  u.id, u.nombre, u.apellido  FROM usuarios u
+                                     WHERE u.rol = 2 AND u.id_materias IS NULL ");
+        $data = $res->fetch_all(MYSQLI_ASSOC);
+
+        return $data;
+    }
+
+    public function updateclase($profesor)
+    {
+        session_start();
+
+
+        $res = $this->db->query(" UPDATE  usuarios 
+                                   SET  id_materias = '{$_SESSION["materia"]}'
+                                 WHERE id = {$profesor} ");
+    }
+
+
+    public function addclase($request)
+    {
+        $res = $this->db->query(" INSERT INTO materia (nombre_materia)
+                                    VALUES ('$request' )");
     }
 }

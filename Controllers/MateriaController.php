@@ -21,8 +21,21 @@ class MateriaController
 
     public function agregar($request)
     {
-        //var_dump($request);
 
-        // header("Location:/admin/clases");
+
+        $this->model->addclase($request);
+
+        header("Location:/admin/clases");
+    }
+
+
+    public function editclase($id)
+    {
+
+        //var_dump($id);
+
+        $this->model->updateclase($id);
+
+        header("Location:/admin/clases");
     }
 }

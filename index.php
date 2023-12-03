@@ -26,7 +26,7 @@ $method = $_SERVER["REQUEST_METHOD"];
 
 if ($method === "POST") {
     switch ($route[0]) {
-        case '/login':
+        case '/home':
             $loginController->login($_POST["correo"], $_POST["password"]);
             break;
 
@@ -84,9 +84,17 @@ if ($method === "POST") {
 
         case '/admin/clase/agregar':
 
-            $MateriaController->agregar($_POST);
+            $MateriaController->agregar($_POST["clase"]);
 
             //var_dump($_POST);
+
+            break;
+
+        case '/admin/clase/edit':
+
+            $MateriaController->editclase($_POST["maestro"]);
+
+            //var_dump($_POST["maestro"]);
 
             break;
 
@@ -99,6 +107,11 @@ if ($method === "POST") {
 
 if ($method === "GET") {
     switch ($route[0]) {
+
+        case '/home/admin':
+            $adminController->index();
+            break;
+
         case '/index.php':
             $loginController->index();
             break;
