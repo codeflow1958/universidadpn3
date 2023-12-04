@@ -6,47 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/output.css" />
-    <title>Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Maestro</title>
 </head>
 
-<body class="">
+<body class="bg-[#f5f6fa] mr-3">
+
 
     <div class="flex">
-        <div class="bg-gray ">
+        <div class="bg-gray-800 text-gray-100 w-64 px-4 py-8 h-screen">
             <div class=" border border-b-1 space-y-10">
-                <h1> universidad</h1>
+                <h1> universidad </h1>
             </div>
             <div class=" border border-b-1">
-
-                <p>maestro</p>
-                <p> maestro maestro</p>
+                <p><?php echo $user[0]['nombre'] . " " .  $user[0]['apellido']  ?></p>
+                <p><?php echo $user[0]['correo'] ?></p>
             </div>
             <div>
-                <form class=" flex " action="">
-                    <p> menu maestro </p>
+                <nav>
 
-                    <a href="/maestro/alumnos/lista"> Alumnos</a>
 
-                </form>
+                    <p>MENU MAESTRO </p>
+                    <a href="/maestro/alumnos/lista?id=<?php echo $user[0]['id'] ?> " class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
+                        Maestro</a>
+
+                </nav>
             </div>
         </div>
-        <div class="">
-            <div class=" flex gap-44">
-                <div>
-                    <p>home</p>
-                </div>
+        <div class="ml-2 flex-1 bg-[#f5f6fa] space-y-5 ">
+            <header class=" bg-white flex justify-between h-12  ">
+                <a class=" start-0" href="/home/maestro">HOME</a>
+                <p class=" end-0"> administrador</p>
+            </header>
 
-            </div>
-            <div>
-                <p>DASHBORD</p>
+            <div class=" flex justify-between">
+                <p class=" font-bold text-lg start">DASHBORD</p>
 
-                <p> home/dashboard</p>
+                <p class=" end"> maestromaestro</p>
             </div>
-            <div>
+            <div class=" bg-white w-80 ">
                 <h1>Bienvenido</h1>
                 <p> selecciona la accion aque quiras realizar </p>
+
+
             </div>
+
+
 
 
         </div>

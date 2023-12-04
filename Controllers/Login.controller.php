@@ -2,6 +2,7 @@
 require_once $_SERVER["DOCUMENT_ROOT"] . "/Models/User.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/Controllers/AdminController.php";
 require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/MaestroController.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/EstudianteController.php");
 
 
 
@@ -34,6 +35,7 @@ class LoginController
     {
         $adminController = new AdminController();
         $maestrocontroller = new MaestroController();
+        $estudiantecontroller = new EstudianteController();
 
         $usuario = $this->model->where("correo", "=", $correo);
 
@@ -52,10 +54,12 @@ class LoginController
                     break;
 
                 case '2':
-                    $maestrocontroller->index();
+                    $maestrocontroller->index($usuario);
+
+                    //var_dump($usuario);
                     break;
                 case '3':
-                    echo "eres alumno";
+                    $estudiantecontroller->index($usuario);
                     break;
             }
         } else {

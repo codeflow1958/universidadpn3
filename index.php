@@ -14,6 +14,7 @@ $adminController = new AdminController();
 $maestrocontroller = new MaestroController();
 $alumno = new AlumnoController();
 $MateriaController = new MateriaController();
+$estudiantecontroller = new EstudianteController();
 
 
 // Dividimos la ruta por el signo "?" para no leer los query params. Ejem: /clientes?id=1
@@ -175,10 +176,28 @@ if ($method === "GET") {
             $adminController->editpermisos($_GET["id"]);
             break;
 
-        case '/maestro/alumnos/lista':
-            $maestrocontroller->readalumno();
+
+
+        case '/maestro/alumnos/lista';
+
+            $maestrocontroller->ownalumnos($_GET["id"]);
+
             break;
 
+        case '/home/maestro':
+            $maestrocontroller->index($data);
+            break;
+
+        case '/alumno/clase/editar':
+            $estudiantecontroller->ownclases2($_GET["id"]);
+
+            break;
+
+        case '/alumno/clase/calificaciones':
+            $estudiantecontroller->ownclases($_GET["id"]);
+
+            //var_dump($_GET["id"]);
+            break;
 
 
         default:

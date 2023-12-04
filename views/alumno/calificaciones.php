@@ -21,14 +21,18 @@ $_SESSION["id"] = $data
                 <h1> universidad</h1>
             </div>
             <div class=" border border-b-1">
-                <p>Maestro</p>
-                <p>maestro maestro</p>
+                <p>alumno</p>
+                <p>alumno alumno</p>
             </div>
             <div>
                 <nav>
-                    <p>MENU MAESTRO </p>
-                    <a href="/maestro/alumnos/lista" class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
-                        Maestros</a>
+
+
+                    <p>menu alumnno </p>
+                    <a href="/alumno/clase/calificaciones" class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
+                        ver calificaciones</a>
+                    <a href="/alumno/clase/editar" class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
+                        administrar tus clases</a>
 
                 </nav>
             </div>
@@ -42,17 +46,15 @@ $_SESSION["id"] = $data
 
 
             <div>
-                <h1> Alumnos de la clase de </h1>
+                <h1> calificaciones de <?php echo $alumno[0]["nombre"]  ?> </h1>
             </div>
 
             <table id="table_id" class=" table-auto border-separate border-spacing-2 border border-slate-400">
                 <thead>
                     <tr>
                         <th class="border border-slate-300"># </th>
-                        <th class="border border-slate-300 w-56">nombre del alumno</th>
-                        <th class="border border-slate-300  w-56">claificacion</th>
-                        <th class="border border-slate-300 w-60">mensaje</th>
-                        <th class="border border-slate-300 w-48 "> acciones</th>
+                        <th class="border border-slate-300 w-56"> Materia</th>
+                        <th class="border border-slate-300  w-56"> calificacion</th>
 
                     </tr>
                 </thead>
@@ -61,17 +63,10 @@ $_SESSION["id"] = $data
                     foreach ($alumno as $alumno) {
                     ?>
                         <tr>
-                            <td class="border border-slate-300"><?php echo $alumno["id"] ?></td>
-                            <td class="border border-slate-300">
-                                <?php echo $alumno["Nombre_Alumno"] . " " . $alumno["Apellido_Alumno"] ?></td>
-                            <td class="border border-slate-300"> 100</td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300 flex space-x-2">
-                                <a class="bg-blue-500 text-white font-bold py-2 px-4 rounded" href=""> lista</a>
-                                <a href=""> mensaje</a>
+                            <td class="border border-slate-300"><?php echo $alumno["id_materia"]   ?> </td>
+                            <td class="border border-slate-300"> <?php echo $alumno["nombre_materia"]   ?></td>
 
-                            </td>
+                            <td class="border border-slate-300 flex space-x-2"> 100</td>
                         </tr>
                     <?php  } ?>
 

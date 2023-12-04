@@ -119,7 +119,7 @@ class Model
      */
     public function update($data)
     {
-        session_start();
+
         $res = $this->db->query("UPDATE {$this->table} 
                                          SET rol= '{$data["rol"]}',
                                           nombre = '{$data["nombre"]}', 
@@ -222,5 +222,42 @@ class Model
     {
         $res = $this->db->query(" INSERT INTO materia (nombre_materia)
                                     VALUES ('$request' )");
+    }
+
+
+    public function listaalumnos()
+    {
+
+        session_start();
+        $res = $this->db->query(" SELECT
+    u.id,u.nombre AS Nombre_Alumno,
+    u.apellido AS Apellido_Alumno
+FROM
+    usuarios u
+JOIN
+    asignacion a ON u.id = a.id_alumno
+JOIN
+    materia m ON a.id_materia = m.id
+JOIN
+    usuarios maestro ON m.id  = maestro.id_materias
+WHERE
+    maestro.id = '{$_SESSION["id"]}' ");
+        $alumnos = $res->fetch_all(MYSQLI_ASSOC);
+        return $alumnos;
+    }
+
+
+    public function listadodematerias()
+    {
+        session_start();
+        $res = $this->db->query(" SELECT  a.id_alumno, a.id_materia, m.nombre_materia,u.nombre
+                                  FROM asignacion a
+                                  INNER JOIN materia m ON
+                                   a.id_materia = m.id 
+                                   INNER JOIN usuarios u ON
+                                  a.id_alumno = u.id 
+                                  WHERE id_alumno  = '{$_SESSION["id"]}' ");
+        $alumnos = $res->fetch_all(MYSQLI_ASSOC);
+        return $alumnos;
     }
 }
