@@ -119,9 +119,9 @@ class Model
      */
     public function update($data)
     {
-
+        session_start();
         $res = $this->db->query("UPDATE {$this->table} 
-                                         SET rol= '{$data["rol"]}',
+                                         SET 
                                           nombre = '{$data["nombre"]}', 
                                          apellido = '{$data["apellido"]}',
                                          direccion = '{$data["direccion"]}', 
@@ -145,6 +145,18 @@ class Model
         // $query = "update {$this->table} set " . implode(", ", $updatePairs) . "where id = {$_SESSION["cliente_edit"]}";
         // $this->db->query($query);
     }
+
+
+    public function updaterol($data)
+    {
+        // session_start();
+        // $res = $this->db->query("UPDATE {$this->table} 
+        //                                  SET rol= '{$data["rol"]}'
+
+        //                                 WHERE id = {$_SESSION["cliente_edit"]}");
+        var_dump($data);
+    }
+
 
     /**
      * Método para eliminar un registro en la tabla.

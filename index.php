@@ -66,7 +66,7 @@ if ($method === "POST") {
 
         case '/admin/alumno/editar':
 
-            $alumno->editar($_POST);
+            $alumno->editalumno($_POST);
             break;
 
         case '/admin/rol/edit':

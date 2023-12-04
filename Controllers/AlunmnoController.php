@@ -20,10 +20,19 @@ class AlumnoController
         header("Location:/admin/alumnos ");
     }
 
-    public function editar($data)
+    public function editalumno($data)
     {
         $userModel = new User();
         $userModel->update($data);
+        //var_dump($data);
+
+        header("Location:/admin/alumnos");
+    }
+
+    public function editar($data)
+    {
+        $userModel = new User();
+        $userModel->updaterol($data);
         //var_dump($data);
 
         header("Location:/admin/permisos");
