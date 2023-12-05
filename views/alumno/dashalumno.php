@@ -28,9 +28,11 @@
 
 
                     <p>menu alumnno </p>
-                    <a href="/alumno/clase/calificaciones?id=<?php echo $data[0]['id'] ?>" class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
+                    <a href="/alumno/clase/calificaciones?id=<?php echo $data[0]['id'] ?>"
+                        class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
                         ver calificaciones</a>
-                    <a href="/alumno/clase/editar?id=<?php echo $data[0]['id'] ?>" class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
+                    <a href="/alumno/clase/editar?id=<?php echo $data[0]['id'] ?>"
+                        class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
                         administrar tus clases</a>
 
                 </nav>
@@ -39,7 +41,7 @@
         <div class="ml-2 flex-1 bg-[#f5f6fa] space-y-5 ">
             <header class=" bg-white flex justify-between h-12  ">
                 <a class=" start-0" href="/home/maestro">HOME</a>
-                <p class=" end-0"> clases</p>
+                <a class=" end-0" href="/salir">logout</a>
             </header>
 
             <div class=" flex justify-between">

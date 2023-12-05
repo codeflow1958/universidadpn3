@@ -16,7 +16,7 @@
             </div>
             <div class=" border border-b-1">
                 <p>admin</p>
-                <p>administrador</p>
+                <a class=" end-0" href="/salir">logout</a>
             </div>
             <div>
                 <nav>

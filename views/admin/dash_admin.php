@@ -40,7 +40,7 @@
         <div class="ml-2 flex-1 bg-[#f5f6fa] space-y-5 ">
             <header class=" bg-white flex justify-between h-12  ">
                 <a class=" start-0" href="/home/admin">HOME</a>
-                <p class=" end-0"> administrador</p>
+                <a class=" end-0" href="/salir">logout</a>
             </header>
 
             <div class=" flex justify-between">

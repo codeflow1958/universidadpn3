@@ -27,7 +27,8 @@ $_SESSION["id"] = $data
             <div>
                 <nav>
                     <p>MENU MAESTRO </p>
-                    <a href="/maestro/alumnos/lista" class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
+                    <a href="/maestro/alumnos/lista"
+                        class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
                         Maestros</a>
 
                 </nav>
@@ -36,7 +37,7 @@ $_SESSION["id"] = $data
         <div>
             <header class=" bg-white flex justify-between h-12  ">
                 <a class=" start-0" href="/home/maestro">HOME</a>
-                <p class=" end-0"> administrador</p>
+                <a class=" end-0" href="/salir">logout</a>
             </header>
 
 
@@ -60,19 +61,19 @@ $_SESSION["id"] = $data
                     <?php
                     foreach ($alumno as $alumno) {
                     ?>
-                        <tr>
-                            <td class="border border-slate-300"><?php echo $alumno["id"] ?></td>
-                            <td class="border border-slate-300">
-                                <?php echo $alumno["Nombre_Alumno"] . " " . $alumno["Apellido_Alumno"] ?></td>
-                            <td class="border border-slate-300"> 100</td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300 flex space-x-2">
-                                <a class="bg-blue-500 text-white font-bold py-2 px-4 rounded" href=""> lista</a>
-                                <a href=""> mensaje</a>
+                    <tr>
+                        <td class="border border-slate-300"><?php echo $alumno["id"] ?></td>
+                        <td class="border border-slate-300">
+                            <?php echo $alumno["Nombre_Alumno"] . " " . $alumno["Apellido_Alumno"] ?></td>
+                        <td class="border border-slate-300"> 100</td>
+                        <td class="border border-slate-300"></td>
+                        <td class="border border-slate-300"></td>
+                        <td class="border border-slate-300 flex space-x-2">
+                            <a class="bg-blue-500 text-white font-bold py-2 px-4 rounded" href=""> lista</a>
+                            <a href=""> mensaje</a>
 
-                            </td>
-                        </tr>
+                        </td>
+                    </tr>
                     <?php  } ?>
 
                 </tbody>

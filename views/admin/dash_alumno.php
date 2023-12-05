@@ -38,7 +38,7 @@
         <div class="pt-4 flex-1 ml-3 mr-2">
             <header class=" bg-white flex justify-between h-12  ">
                 <a class=" start-0" href="/home/admin">HOME</a>
-                <p class=" end-0"> administrador</p>
+                <a class=" end-0" href="/salir">logout</a>
             </header>
             <div>
                 <h1> Lista de Alumnos</h1>

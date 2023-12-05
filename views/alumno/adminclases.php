@@ -40,55 +40,55 @@ $_SESSION["id"] = $data
         </div>
         <div>
             <header class=" bg-white flex justify-between h-12  ">
-                <a class=" start-0" href="/home/maestro">HOME</a>
-                <p class=" end-0"> administrador</p>
-            </header>
+                <a>HOME</a>
+                <a class=" end-0" href="/salir">logout</a>
 
 
-            <div class=" flex">
-
-                <div>
-                    <div>
-                        <h1> calificaciones de <?php echo $alumno[0]["nombre"]  ?> </h1>
-                    </div>
-
-                    <table id="table_id" class=" table-auto border-separate border-spacing-2 border border-slate-400">
-                        <thead>
-                            <tr>
-                                <th class="border border-slate-300"># </th>
-                                <th class="border border-slate-300 w-56"> Materia</th>
-                                <th class="border border-slate-300  w-56"> calificacion</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            foreach ($alumno as $alumno) {
-                            ?>
-                            <tr>
-                                <td class="border border-slate-300"><?php echo $alumno["id_materia"]   ?> </td>
-                                <td class="border border-slate-300"> <?php echo $alumno["nombre_materia"]   ?></td>
-
-                                <td class="border border-slate-300 flex space-x-2"> <a
-                                        class="bg-red-500 text-white font-bold py-2 px-4 rounded" href="">darse de
-                                        baja</a>
-                                </td>
-                            </tr>
-                            <?php  } ?>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-
-                    <h1> falta </h1>
+                <div class=" flex">
 
                     <div>
+                        <div>
+                            <h1> calificaciones de <?php echo $alumno[0]["nombre"]  ?> </h1>
+                        </div>
+
+                        <table id="table_id"
+                            class=" table-auto border-separate border-spacing-2 border border-slate-400">
+                            <thead>
+                                <tr>
+                                    <th class="border border-slate-300"># </th>
+                                    <th class="border border-slate-300 w-56"> Materia</th>
+                                    <th class="border border-slate-300  w-56"> calificacion</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                foreach ($alumno as $alumno) {
+                                ?>
+                                <tr>
+                                    <td class="border border-slate-300"><?php echo $alumno["id_materia"]   ?> </td>
+                                    <td class="border border-slate-300"> <?php echo $alumno["nombre_materia"]   ?></td>
+
+                                    <td class="border border-slate-300 flex space-x-2"> <a
+                                            class="bg-red-500 text-white font-bold py-2 px-4 rounded" href="">darse de
+                                            baja</a>
+                                    </td>
+                                </tr>
+                                <?php  } ?>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+
+                        <h1> falta </h1>
+
+                        <div>
 
 
+                        </div>
                     </div>
                 </div>
-            </div>
 
         </div>
 

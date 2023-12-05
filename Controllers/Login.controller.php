@@ -51,15 +51,30 @@ class LoginController
                     $adminController->index();
 
 
+
+
+
+
                     break;
 
                 case '2':
                     $maestrocontroller->index($usuario);
 
-                    //var_dump($usuario);
+
+
+
+
+
+
+
+
                     break;
+
+
                 case '3':
                     $estudiantecontroller->index($usuario);
+
+
                     break;
             }
         } else {

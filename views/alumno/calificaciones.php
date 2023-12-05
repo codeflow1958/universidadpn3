@@ -29,7 +29,8 @@ $_SESSION["id"] = $data
 
 
                     <p>menu alumnno </p>
-                    <a href="/alumno/clase/calificaciones" class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
+                    <a href="/alumno/clase/calificaciones"
+                        class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
                         ver calificaciones</a>
                     <a href="/alumno/clase/editar" class="block py-2 text-gray-200 hover:bg-gray-700 hover:text-white">
                         administrar tus clases</a>
@@ -40,7 +41,7 @@ $_SESSION["id"] = $data
         <div>
             <header class=" bg-white flex justify-between h-12  ">
                 <a class=" start-0" href="/home/maestro">HOME</a>
-                <p class=" end-0"> administrador</p>
+                <a class=" end-0" href="/salir">logout</a>
             </header>
 
 
@@ -62,12 +63,12 @@ $_SESSION["id"] = $data
                     <?php
                     foreach ($alumno as $alumno) {
                     ?>
-                        <tr>
-                            <td class="border border-slate-300"><?php echo $alumno["id_materia"]   ?> </td>
-                            <td class="border border-slate-300"> <?php echo $alumno["nombre_materia"]   ?></td>
+                    <tr>
+                        <td class="border border-slate-300"><?php echo $alumno["id_materia"]   ?> </td>
+                        <td class="border border-slate-300"> <?php echo $alumno["nombre_materia"]   ?></td>
 
-                            <td class="border border-slate-300 flex space-x-2"> 100</td>
-                        </tr>
+                        <td class="border border-slate-300 flex space-x-2"> 100</td>
+                    </tr>
                     <?php  } ?>
 
                 </tbody>

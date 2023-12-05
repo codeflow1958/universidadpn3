@@ -26,14 +26,16 @@
                         <input class="border-2 border-solid border-gray-500 " type="text" name="direccion">
                         <label for="">Fecha de Nacimiento</label>
                         <input class="border-2 border-solid border-gray-500 " type="date" name="fecha_nac">
-                        <input class="border-2 border-solid border-gray-500 " type="text" hidden value="alumno" name="password">
+                        <input class="border-2 border-solid border-gray-500 " type="text" hidden value="alumno"
+                            name="password">
                         <input class="border-2 border-solid border-gray-500 " type="number" hidden value=3 name="rol">
 
 
                         <div class="mt-3">
                             <a href="/admin/alumnos" class="bg-gray-500 text-white font-bold py-2 px-4 rounded">
                                 CERRAR</a>
-                            <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" type=" submit">Crear</button>
+                            <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded"
+                                type=" submit">Crear</button>
                         </div>
                     </div>
                 </form>

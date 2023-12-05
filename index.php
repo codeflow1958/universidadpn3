@@ -4,6 +4,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/AdminController.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/MaestroController.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/AlunmnoController.php");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/MateriaController.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/Controllers/Salir.php");
 
 
 
@@ -15,6 +16,7 @@ $maestrocontroller = new MaestroController();
 $alumno = new AlumnoController();
 $MateriaController = new MateriaController();
 $estudiantecontroller = new EstudianteController();
+$salir = new Salir();
 
 
 // Dividimos la ruta por el signo "?" para no leer los query params. Ejem: /clientes?id=1
@@ -108,6 +110,10 @@ if ($method === "POST") {
 
 if ($method === "GET") {
     switch ($route[0]) {
+
+        case '/salir':
+            $salir->logout();
+            break;
 
         case '/home/admin':
             $adminController->index();
