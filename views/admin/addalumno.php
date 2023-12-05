@@ -8,32 +8,32 @@
     <title>add alumno</title>
 </head>
 
-<body class=" flex items-center justify-center h-screen">
+<body class=" flex items-center justify-center h-screen bg-[#fff5d2]">
     <div>
         <div>
-            <h1> Agregar Alumno</h1>
-            <div>
+
+            <div class="border-2 border-solid  w-80 h-96 flex flex-col items-center justify-center bg-white ">
                 <form action="/admin/alumno/agregar" method="post">
+                    <h1 class=" font-bold text-lg pb-2 ">Agregar Alumno</h1>
                     <div class="flex flex-col">
                         <label for="">Correo Electronico</label>
-                        <input type="text" name="correo">
+                        <input class="border-2 border-solid border-gray-500 " type="text" name="correo">
                         <label for="">Nombre(s) </label>
-                        <input type="text" name="nombre">
+                        <input class="border-2 border-solid border-gray-500 " type="text" name="nombre">
                         <label for="">Apellido(s) </label>
-                        <input type="text" name="apellido">
+                        <input class="border-2 border-solid border-gray-500 " type="text" name="apellido">
                         <label for="">Direccion</label>
-                        <input type="text" name="direccion">
+                        <input class="border-2 border-solid border-gray-500 " type="text" name="direccion">
                         <label for="">Fecha de Nacimiento</label>
-                        <input type="date" name="fecha_nac">
-                        <input type="text" hidden value="alumno" name="password">
-                        <input type="number" hidden value=3 name="rol">
+                        <input class="border-2 border-solid border-gray-500 " type="date" name="fecha_nac">
+                        <input class="border-2 border-solid border-gray-500 " type="text" hidden value="alumno" name="password">
+                        <input class="border-2 border-solid border-gray-500 " type="number" hidden value=3 name="rol">
 
 
-                        <div>
+                        <div class="mt-3">
                             <a href="/admin/alumnos" class="bg-gray-500 text-white font-bold py-2 px-4 rounded">
                                 CERRAR</a>
-                            <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded"
-                                type=" submit">Crear</button>
+                            <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" type=" submit">Crear</button>
                         </div>
                     </div>
                 </form>

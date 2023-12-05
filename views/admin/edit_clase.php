@@ -14,22 +14,23 @@ $_SESSION["materia"] = $materia["id"];
 
 </head>
 
-<body class=" flex items-center justify-center h-screen">
+<body class=" flex items-center justify-center h-screen bg-[#fff5d2] ">
 
     <div>
-        <h1> Editar Clase</h1>
 
-        <div>
-            <form action="/admin/clase/edit" method="post">
+
+        <div class="border-2 border-solid  w-80 h-96 flex flex-col items-center justify-center bg-white ">
+            <form action=" /admin/clase/edit" method="post">
+                <h1 class=" font-bold text-lg pb-2 ">Editar clase </h1>
                 <div class="flex flex-col">
                     <label for=""> Nombre de la Clase</label>
-                    <input type="text" disabled value=" <?= $materia['nombre_materia'] ?>">
-                    <input type="text" hidden value=" <?= $materia['id'] ?>" name="id_materia">
+                    <input class="border-2 border-solid border-gray-500 " type="text" disabled value=" <?= $materia['nombre_materia'] ?>">
+                    <input class="border-2 border-solid border-gray-500 " type="text" hidden value=" <?= $materia['id'] ?>" name="id_materia">
                     <label for=""> Maestro asignado</label>
 
 
 
-                    <select name="maestro" id="">
+                    <select class="border-2 border-solid border-gray-500 " name="maestro" id="">
                         <?php
                         foreach ($data as $data) {
 
@@ -40,7 +41,7 @@ $_SESSION["materia"] = $materia["id"];
                             </option>
                         <?php } ?>
                     </select>
-                    <div>
+                    <div class=" mt-3">
                         <a class="bg-gray-500 text-white font-bold py-2 px-4 rounded" href="/admin/clases"> cerrar</a>
                         <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit">Guardar
                             cambios</button>

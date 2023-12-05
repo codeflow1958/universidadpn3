@@ -122,10 +122,13 @@ class Model
         session_start();
         $res = $this->db->query("UPDATE {$this->table} 
                                          SET 
-                                          nombre = '{$data["nombre"]}', 
+                                          nombre = '{$data["nombre"]}',
                                          apellido = '{$data["apellido"]}',
-                                         direccion = '{$data["direccion"]}', 
-                                         fecha_nac = CASE 
+                                         direccion = '{$data["direccion"]}',
+                                         
+                                         
+                                          
+                                          fecha_nac = CASE 
                                                       WHEN fecha_nac = '000-00-00'                
                                                            THEN '{$data["fecha_nac"]}'
                                                            ELSE  fecha_nac
@@ -149,12 +152,12 @@ class Model
 
     public function updaterol($data)
     {
-        // session_start();
-        // $res = $this->db->query("UPDATE {$this->table} 
-        //                                  SET rol= '{$data["rol"]}'
+        session_start();
+        $res = $this->db->query("UPDATE {$this->table} 
+                                         SET rol= '{$data["rol"]}'
 
-        //                                 WHERE id = {$_SESSION["cliente_edit"]}");
-        var_dump($data);
+                                        WHERE id = {$_SESSION["cliente_edit"]}");
+        //var_dump($data);
     }
 
 
@@ -180,6 +183,18 @@ class Model
     public function where($column, $operator, $value)
     {
         $res = $this->db->query("SELECT * FROM {$this->table} WHERE $column $operator '$value' ");
+        $data = $res->fetch_all(MYSQLI_ASSOC);
+
+        return $data;
+    }
+
+    public function wheremaestro($column, $operator, $value)
+    {
+        $res = $this->db->query("SELECT  u.fecha_nac, u.apellido,u.correo, u.direccion ,u.id, u.nombre, 
+    IFNULL(m.nombre_materia, 'Sin Clase Asignada') AS Materia_Asignada
+                                 FROM {$this->table} u
+                                 LEFT JOIN materia m ON  u.id_materias = m.id 
+                                 WHERE $column $operator '$value' ");
         $data = $res->fetch_all(MYSQLI_ASSOC);
 
         return $data;

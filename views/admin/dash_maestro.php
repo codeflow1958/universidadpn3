@@ -33,6 +33,7 @@
             </div>
         </div>
         <div>
+
             <header class=" bg-white flex justify-between h-12  ">
                 <a class=" start-0" href="/home/admin">HOME</a>
                 <p class=" end-0"> administrador</p>
@@ -65,22 +66,23 @@
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($data as $data) {
-                        ?>
-                            <tr>
-                                <td class="border border-slate-300"> <?php echo $data['id']; ?> </td>
-                                <td class="border border-slate-300"> <?php echo $data['correo']; ?></td>
-                                <td class="border border-slate-300"><?php echo $data['direccion']; ?></td>
-                                <td class="border border-slate-300"><?php echo $data['fecha_nac']; ?></td>
-                                <td class="border border-slate-300">matematicas</td>
-                                <td class="border border-slate-300 flex space-x-2 ">
-                                    <a class="bg-blue-500 text-white font-bold py-2 px-4 rounded" href=" /admin/maestros/edit?id=<?php echo $data['id'] ?>"> Editar</a>
-                                    <form action="/maestro/delete" method="post">
-                                        <input type="number" hidden name="id" value=<?php echo $data['id']; ?>>
-                                        <button class="bg-red-500 text-white font-bold py-2 px-4 rounded">delete</button>
-                                    </form>
-                                </td>
-                            </tr>
+                                foreach ($data as $data) {
+                                ?>
+                        <tr>
+                            <td class="border border-slate-300"> <?php echo $data['id']; ?> </td>
+                            <td class="border border-slate-300"> <?php echo $data['correo']; ?></td>
+                            <td class="border border-slate-300"><?php echo $data['direccion']; ?></td>
+                            <td class="border border-slate-300"><?php echo $data['fecha_nac']; ?></td>
+                            <td class="border border-slate-300"> <?php echo $data['Materia_Asignada']; ?></td>
+                            <td class="border border-slate-300 flex space-x-2 ">
+                                <a class="bg-blue-500 text-white font-bold py-2 px-4 rounded"
+                                    href=" /admin/maestros/edit?id=<?php echo $data['id'] ?>"> Editar</a>
+                                <form action="/maestro/delete" method="post">
+                                    <input type="number" hidden name="id" value=<?php echo $data['id']; ?>>
+                                    <button class="bg-red-500 text-white font-bold py-2 px-4 rounded">delete</button>
+                                </form>
+                            </td>
+                        </tr>
 
                         <?php } ?>
                     </tbody>

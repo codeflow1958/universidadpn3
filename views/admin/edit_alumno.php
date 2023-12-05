@@ -13,30 +13,34 @@ $_SESSION["cliente_edit"] = $data["id"];
     <title>add alumno</title>
 </head>
 
-<body class=" flex items-center justify-center h-screen">
+<body class=" flex items-center justify-center h-screen bg-[#fff5d2]">
 
-    <div>
-        <form action="/admin/alumno/editar" method="post">
-            <div class=" flex  flex-col ">
+    <div class="pt-4 flex-1 flex items-center justify-center ">
 
-                <label for="">Correo Electronico</label>
-                <input type="text" disabled value="<?= $data['correo'] ?> " name="correo">
-                <label for="">Nombre(s) </label>
-                <input type="text" placeholder=" <?= $data['nombre'] ?>" name="nombre">
-                <label for="">Apellido(s) </label>
-                <input type="text" placeholder=" <?= $data['apellido'] ?>" name="apellido">
-                <label for="">Direccion</label>
-                <input type="text" placeholder=" <?= $data['direccion'] ?>" name="direccion">
-                <label for="">Fecha de Nacimiento</label>
-                <input type="date" placeholder=" <?= $data['fecha_nac'] ?>" name="fecha_nac">
+        <div class=" border-2 border-solid w-80 h-96 flex flex-col items-center justify-center bg-white ">
+            <form action=" /admin/alumno/editar" method="post">
+                <div class=" flex  flex-col ">
+                    <h1 class=" font-bold text-lg pb-2 ">Editar Alumnos</h1>
 
 
-                <div>
-                    <a class="bg-gray-500 text-white font-bold py-2 px-4 rounded" href="/admin/alumnos"> cerrar</a>
-                    <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit">Guardar</button>
+                    <label for="">Correo Electronico</label>
+                    <input class="border-2 border-solid border-gray-500 " type="text" value=" <?= $data['nombre'] ?>" name="nombre">
+                    <label for="">Apellido(s) </label>
+                    <input class="border-2 border-solid border-gray-500 " type="text" value=" <?= $data['apellido'] ?>" name="apellido">
+                    <label for="">Direccion</label>
+                    <input class="border-2 border-solid border-gray-500 " type="text" value=" <?= $data['direccion'] ?>" name="direccion">
+                    <label for="">Fecha de Nacimiento</label>
+                    <input class="border-2 border-solid border-gray-500 " type="date" value=" <?= $data['fecha_nac'] ?>" name="fecha_nac">
+
+
+                    <div class="mt-3">
+                        <a class="bg-gray-500 text-white font-bold py-2 px-4 rounded" href="/admin/alumnos"> cerrar</a>
+                        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded" type="submit">Guardar</button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+
+        </div>
     </div>
 </body>
 
